@@ -1,0 +1,44 @@
+ internal class phone
+ {
+     private string brand;
+     private int batteryLevel;
+
+     public string Brand
+     {
+         get { return brand; }
+         set { brand = value; }
+     }
+     public int BatteryLevel
+     {
+         get { return batteryLevel; }
+         set
+         {
+             if (batteryLevel <= 0 || batteryLevel > 100) { Console.WriteLine("ошибка"); }
+             else { batteryLevel = value; }
+         }
+     }
+         public phone (string brand, int batteryLevel)
+     {
+         Brand = brand;
+         BatteryLevel = batteryLevel;
+     }
+     public void UsePhone()
+     {
+         if (batteryLevel >= 10) { batteryLevel = 10; } 
+         else { batteryLevel = 0; }
+         Console.WriteLine($"телефон {brand}, заряд :{batteryLevel}%");
+     }
+
+     }
+
+
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        phone PhoneObject = new phone();
+        PhoneObject.BatteryLevel = 77;
+        PhoneObject.Brand = "самсункг";
+    }
+}
