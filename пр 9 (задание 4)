@@ -1,0 +1,36 @@
+ internal class circle
+ {
+     private double radius;
+
+     public double Radius 
+     {  
+         get { return radius; }
+         set
+         {
+             if (value > 0)
+             {  radius = value; }
+             else { Console.WriteLine("ошибка"); }
+         }
+     }
+     public circle(double radius)
+     {
+         Radius = radius;
+     }
+     public void GetArea()
+     {
+        double a = Math.PI * radius * radius;
+         Console.WriteLine($"площадь круга : {a}");
+     }
+ }
+
+
+
+
+ internal class Program
+ {
+     static void Main(string[] args)
+     {
+         circle CircleObject = new circle(2);
+         CircleObject.GetArea();
+     }
+ }
