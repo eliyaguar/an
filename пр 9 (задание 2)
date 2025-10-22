@@ -37,7 +37,7 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        phone PhoneObject = new phone();
+        phone PhoneObject = new phone("самсункг", 77);
         PhoneObject.BatteryLevel = 77;
         PhoneObject.Brand = "самсункг";
     }
